@@ -16,7 +16,7 @@ export async function signup(req,res){
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-        return res.status(400).json({ message: "Invalid email format" });
+            return res.status(400).json({ message: "Invalid email format" });
         }
 
         const existingUser = await User.findOne({ email });
@@ -25,7 +25,7 @@ export async function signup(req,res){
         }
 
         const idx = Math.floor(Math.random() * 100) + 1; //generate a random number between 1 and 100
-        const randomAvatar = `https://api.dicebear.com/5.x/initials/svg?seed=${fullName}&backgroundColor=transparent&backgroundType=gradientLinear&backgroundColorOpacity=0.2&radius=50&size=100&fontFamily=Arial&fontSize=50&fontWeight=500&color=black`;
+        const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
 
         const newUser = await User.create({
             fullName,
@@ -133,7 +133,7 @@ export async function onboard(req, res) {
             userId,
             {
                 ...req.body,
-                isOnBoarded: true,
+                isOnboarded: true,
             }, {new: true}
         );
 
