@@ -49,7 +49,7 @@ const LoginPage = () => {
                                 <p>Sign in to your account to continue your language learning journey</p>
                             </div>
 
-                            <div className="felx flex-col gap-3">
+                            <div className="flex flex-col gap-4">
                                 <div className="form-control w-full space-y-2">
                                     <label className="label">
                                         <span className="label-text">Email</span>
@@ -80,7 +80,7 @@ const LoginPage = () => {
 
                                 <button
                                     type="submit"
-                                    className="btn btn-primary w-full"
+                                    className="btn btn-primary w-full mt-2"
                                     disabled={isPending}
                                 >
                                     {isPending ? (
