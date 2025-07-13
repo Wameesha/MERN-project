@@ -12,10 +12,13 @@ import { Toaster } from "react-hot-toast";
 import PageLoader from "./components/PageLoader.jsx";
 import useAuthUser from "./hooks/useAuthUser.js";
 import Layout from "./components/Layout.jsx";
+import { useThemeStore } from "./store/useThemeStore.js";
 
 
 
 const App = () => {
+  
+  const {theme} = useThemeStore();
 
   const {isLoading, authUser} = useAuthUser();
 
@@ -27,7 +30,7 @@ const App = () => {
 
   
   return (
-    <div className="500 h-screen" data-theme="synthwave">
+    <div className="500 h-screen" data-theme={theme}>
       <Routes>
         <Route path="/" element={isAuthenticated && isOnboarded ? (
           <Layout showSidebar={true}>
