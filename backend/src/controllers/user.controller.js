@@ -7,7 +7,7 @@ export async function getRecommendedUsers(req, res) {
         const currentUserId = req.user.id;
         const currentUser = req.user;
 
-        const getRecommendedUsers = await User.find({
+        const recommendedUsers = await User.find({
             $and: [
                 { _id: { $ne: currentUserId } }, // Exclude current user
                 { _id: { $nin: currentUser.friends } }, // Exclude friends
@@ -67,7 +67,7 @@ export async function sendFriendRequest(req, res) {
         }
 
         // Create a new friend request
-        const friendRequest = await friendRequest.create({
+        const friendRequest = await FriendRequest.create({
             sender: myId,   
             recipient: recipientId,
         });
