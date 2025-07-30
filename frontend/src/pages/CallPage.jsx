@@ -111,7 +111,7 @@ const CallPage = () =>{
     };
 
     initCall(); 
-  }, [tokenData, authUser, callId]);
+  }, [tokenData, authUser, callId, client, call, isConnecting]);
 
   if (isLoading || isConnecting)  return <PageLoader/>
 
