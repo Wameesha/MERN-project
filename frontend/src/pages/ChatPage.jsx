@@ -103,10 +103,10 @@ console.log("Stream API Key:", STREAM_API_KEY ? "Present" : "Missing");
 
   const handleVideoCall = () => {
     if (channel){
-      const callUrl = `${window.location.origin}/call${channel.id}`;
+      const callUrl = `${window.location.origin}/call/${channel.id}`;
 
       channel.sendMessage({
-        text: `I've started a video call. Join me hear: ${callUrl}`,
+        text: `I've started a video call. Join me here: ${callUrl}`,
       });
     }
     toast.success("Video call link sent successfully!");
