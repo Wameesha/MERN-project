@@ -39,11 +39,11 @@ const NotificationsPage = () => {
 
   // Debug profile pics
   incomingRequests.forEach((req, index) => {
-    console.log(`Incoming request ${index} profile pic:`, req.sender?.profilePic);
+    console.log(`Incoming request ${index} profile pic:`, req.sender?.profilepic);
   });
   
   acceptedRequests.forEach((req, index) => {
-    console.log(`Accepted request ${index} profile pic:`, req.recipient?.profilePic);
+    console.log(`Accepted request ${index} profile pic:`, req.recipient?.profilepic);
   });
 
 
@@ -78,7 +78,7 @@ const NotificationsPage = () => {
                         <div className="avatar">
                           <div className="w-12 h-12 rounded-full">
                             <img 
-                              src={request.sender.profilePic} 
+                              src={request.sender.profilepic} 
                               alt={request.sender.fullName}
                               className="w-full h-full object-cover rounded-full"
                             />
@@ -137,7 +137,7 @@ const NotificationsPage = () => {
                       <div className="avatar">
                         <div className="w-12 h-12 rounded-full">
                           <img 
-                            src={notifications.recipient.profilePic} 
+                            src={notifications.recipient.profilepic} 
                             alt={notifications.recipient.fullName}
                             className="w-full h-full object-cover rounded-full"
                           />
