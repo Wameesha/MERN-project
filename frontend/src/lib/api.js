@@ -35,6 +35,9 @@ export async function getUserFriends() {
     return response.data;
 }
 
+// Alias for getUserFriends
+export const getFriends = getUserFriends;
+
 export async function getRecommendedUsers() {
     const response = await axiosInstance.get("/users");
     return response.data;

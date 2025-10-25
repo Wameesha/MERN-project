@@ -11,7 +11,7 @@ export async function getRecommendedUsers(req, res) {
             $and: [
                 { _id: { $ne: currentUserId } }, // Exclude current user
                 { _id: { $nin: currentUser.friends } }, // Exclude friends
-                {isOnBoarded: true} // Only include users who have completed onboarding
+                {isOnboarded: true} // Only include users who have completed onboarding
             ]
         })
         res.status(200).json(recommendedUsers)
@@ -25,7 +25,7 @@ export async function getMyFriends(req, res) {
     try {
         const user = await User.findById(req.user.id)
         .select("friends")
-        .populate("friends", "fullName profilepic nativeLanguage learningLanguage");
+        .populate("friends", "fullName profilepic nativeLanguage learningLanguage location bio");
 
         res.status(200).json(user.friends);
     } catch (error) {
